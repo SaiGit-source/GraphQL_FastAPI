@@ -4,3 +4,4 @@ pydantic
 strawberry-graphql[fastapi]
 uvicorn[standard]
 python-dotenv
+boto3

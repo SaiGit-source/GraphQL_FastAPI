@@ -16,6 +16,9 @@ dist/
 build/
 *.egg-info/
 
+# Lambda deployment
+package/
+
 # IDE
 .vscode/
 .idea/
