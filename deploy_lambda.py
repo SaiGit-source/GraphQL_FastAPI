@@ -124,7 +124,7 @@ def ensure_api_gateway(lambda_arn: str) -> str:
             if api.get("name") == FUNCTION_NAME:
                 api_id = api["id"]
                 print(f"Found existing REST API Gateway: {api_id}")
-                return f"arn:aws:execute-api:{REGION}:{account_id}:{api_id}/*/*/GraphQL-FastAPI*"
+                return f"arn:aws:execute-api:{REGION}:{account_id}:{api_id}/*/*"
     except Exception as e:
         print(f"Could not list REST APIs: {e}")
 
@@ -175,7 +175,7 @@ def ensure_api_gateway(lambda_arn: str) -> str:
     endpoint = f"https://{api_id}.execute-api.{REGION}.amazonaws.com/default/{FUNCTION_NAME}/graphql"
     print(f"REST API Gateway created: {api_id}")
     print(f"Endpoint: {endpoint}")
-    return f"arn:aws:execute-api:{REGION}:{account_id}:{api_id}/*/*/GraphQL-FastAPI*"
+    return f"arn:aws:execute-api:{REGION}:{account_id}:{api_id}/*/*"
 
 
 def update_env_file(key: str, value: str):
@@ -198,6 +198,4 @@ if __name__ == "__main__":
     if not ROLE_ARN:
         raise ValueError("AWS_LAMBDA_ROLE_ARN is not set in your .env file")
     build_zip()
-    create_or_update()
-        raise ValueError("AWS_LAMBDA_ROLE_ARN is not set in your .env file")
     create_or_update()
