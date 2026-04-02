@@ -1,0 +1,6 @@
+https://fastapi.tiangolo.com/how-to/graphql/
+
+We will use Strawberry: https://strawberry.rocks/docs/integrations/fastapi
+
+uvicorn main:app --reload
+
